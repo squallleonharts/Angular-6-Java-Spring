@@ -1,0 +1,25 @@
+<h4 class="text-center">Create Employee</h4>
+<div [hidden]="submitted" class="mx-auto" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="w-100">
+      <input matInput placeholder="First Name" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Last Name" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Email" id="emailId" required [(ngModel)]="employee.emailId" name="emailId">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="btn-block" type="submit">Submit</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h5 class="text-success text-center">You submitted successfully!</h5>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
